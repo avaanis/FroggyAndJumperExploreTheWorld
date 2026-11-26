@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Froggy and Jumper explore the world</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=DM+Sans:wght@400;500&family=Lora&family=Playfair+Display&family=Space+Mono&family=Caveat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<section id="gate">
+  <div class="gl">
+    <p class="kick">a shared bucket list</p>
+    <h1>Froggy<br>and Jumper<br>explore<br>the world</h1>
+    <form id="pw"><input id="pwin" type="password" placeholder="Password" autocomplete="off" autofocus><button>Enter</button></form>
+    <p id="pwerr" class="err"></p>
+    <div id="who" hidden><p>Who is here?</p><button data-w="Froggy">Froggy</button><button data-w="Jumper">Jumper</button></div>
+  </div>
+  <div class="gr"><div class="arch"></div></div>
+</section>
+
+<div id="app" hidden>
+  <header>
+    <span class="logo"><img src="favicon.svg" alt="">Froggy and Jumper explore the world</span>
+    <span id="here"></span><span id="status">Saved</span>
+    <button id="theme" class="tb">Dark</button>
+  </header>
+  <div id="bar">
+    <div class="dd"><button class="tb" data-dd="m-style">Style</button><div class="menu" id="m-style"></div></div>
+    <div class="dd"><button class="tb" data-dd="m-font">Font</button><div class="menu" id="m-font"></div></div>
+    <span class="sep"></span>
+    <button class="tb" data-c="bold"><b>B</b></button><button class="tb" data-c="italic"><i>I</i></button><button class="tb" data-c="underline"><u>U</u></button><button class="tb" data-c="strikeThrough"><s>S</s></button>
+    <span class="sep"></span>
+    <div class="dd"><button class="tb" data-dd="m-color">Text colour</button><div class="menu sw" id="m-color"></div></div>
+    <div class="dd"><button class="tb" data-dd="m-hi">Highlight</button><div class="menu sw" id="m-hi"></div></div>
+    <span class="sep"></span>
+    <button class="tb" data-c="insertUnorderedList">Bullets</button><button class="tb" data-c="insertOrderedList">Numbers</button>
+    <span class="sep"></span>
+    <button class="tb" id="addc">Comment</button>
+  </div>
+  <main>
+    <aside id="tabs"><div class="th">Tabs</div><ul id="tl"></ul><button id="addt">+ New tab</button></aside>
+    <div id="sheet"><article id="paper" contenteditable="true" spellcheck="true"></article></div>
+    <aside id="cm"><div class="th">Comments</div><div id="cbox" hidden><textarea id="ctext" placeholder="Write a comment"></textarea><button id="cpost">Post</button></div><div id="cl"></div></aside>
+  </main>
+</div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="app.js"></script>
+</body></html>
