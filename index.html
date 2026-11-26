@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en-US"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Froggy and Jumper explore the world</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&family=Patrick+Hand&family=Quicksand:wght@500&family=Caveat&family=Lora&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<section id="gate">
+  <div class="gl">
+    <p class="kick">a shared bucket list</p>
+    <h1>Froggy and Jumper explore the world</h1>
+    <form id="pw"><input id="pwin" type="password" placeholder="Password" autocomplete="off" autofocus><button>Enter</button></form>
+    <p id="pwerr" class="err"></p>
+    <div id="who" hidden><p>Who is here?</p><button data-w="Froggy">Froggy</button><button data-w="Jumper">Jumper</button></div>
+  </div>
+  <div class="gr"><div class="arch"></div></div>
+</section>
+
+<div id="app" hidden>
+  <div id="top">
+    <img class="logo" src="favicon.svg" alt="">
+    <div class="tm">
+      <input id="dtitle" placeholder="Untitled document" maxlength="80">
+      <nav class="menus">
+        <div class="dd"><button class="mb" data-dd="m-file">File</button><div class="menu" id="m-file"><button data-act="newtab">New tab</button><button data-act="print">Print</button></div></div>
+        <div class="dd"><button class="mb" data-dd="m-edit">Edit</button><div class="menu" id="m-edit"><button data-c="undo">Undo</button><button data-c="redo">Redo</button><button data-c="selectAll">Select all</button></div></div>
+        <div class="dd"><button class="mb" data-dd="m-view">View</button><div class="menu" id="m-view"><button data-act="theme">Switch light or dark mode</button></div></div>
+        <div class="dd"><button class="mb" data-dd="m-ins">Insert</button><div class="menu" id="m-ins"><button data-act="link">Link</button><button data-c="insertHorizontalRule">Horizontal line</button><button data-act="comment">Comment</button></div></div>
+        <div class="dd"><button class="mb" data-dd="m-fmt">Format</button><div class="menu" id="m-fmt"><button data-c="bold">Bold</button><button data-c="italic">Italic</button><button data-c="underline">Underline</button><button data-c="strikeThrough">Strikethrough</button><button data-c="removeFormat">Clear formatting</button></div></div>
+      </nav>
+    </div>
+    <span id="here"></span><span id="status">Saved</span>
+    <button id="theme" class="tb" data-act="theme">Dark</button>
+  </div>
+  <div id="bar">
+    <button class="tb" data-c="undo" title="Undo">&#8630;</button><button class="tb" data-c="redo" title="Redo">&#8631;</button><button class="tb" data-act="print">Print</button>
+    <span class="sep"></span>
+    <div class="dd"><button class="tb wide" data-dd="m-style" id="b-style">Normal text</button><div class="menu" id="m-style"></div></div>
+    <div class="dd"><button class="tb wide" data-dd="m-font" id="b-font">Patrick Hand</button><div class="menu" id="m-font"></div></div>
+    <span class="sep"></span>
+    <button class="tb" data-act="smaller">&minus;</button><input id="size" value="18"><button class="tb" data-act="bigger">+</button>
+    <span class="sep"></span>
+    <button class="tb" data-c="bold"><b>B</b></button><button class="tb" data-c="italic"><i>I</i></button><button class="tb" data-c="underline"><u>U</u></button>
+    <div class="dd"><button class="tb" data-dd="m-color"><span class="ul" id="cu">A</span></button><div class="menu sw" id="m-color"></div></div>
+    <div class="dd"><button class="tb" data-dd="m-hi">Highlight</button><div class="menu sw" id="m-hi"></div></div>
+    <span class="sep"></span>
+    <button class="tb" data-act="link">Link</button><button class="tb" data-act="comment">Comment</button>
+    <span class="sep"></span>
+    <div class="dd"><button class="tb" data-dd="m-al">Align</button><div class="menu" id="m-al"><button data-c="justifyLeft">Left</button><button data-c="justifyCenter">Center</button><button data-c="justifyRight">Right</button></div></div>
+    <button class="tb" data-c="insertUnorderedList">Bullets</button><button class="tb" data-c="insertOrderedList">Numbers</button>
+    <button class="tb" data-c="removeFormat">Clear</button>
+  </div>
+  <main>
+    <aside id="tabs">
+      <div class="th"><span>Document tabs</span><button id="addt" title="New tab">+</button></div>
+      <ul id="tl"></ul>
+      <div id="outline"></div>
+    </aside>
+    <div id="sheet"><div class="ruler"></div><article id="paper" contenteditable="true" spellcheck="true"></article></div>
+    <aside id="cm" hidden><div class="th"><span>Comments</span></div><div id="cbox" hidden><textarea id="ctext" placeholder="Write a comment"></textarea><button id="cpost">Post</button></div><div id="cl"></div></aside>
+  </main>
+  <div class="menu" id="tmenu"><button data-t="rename">Rename</button><button data-t="delete">Delete</button></div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="app.js"></script>
+</body></html>
